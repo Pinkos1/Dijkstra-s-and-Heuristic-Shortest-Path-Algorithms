@@ -2,8 +2,8 @@
 ## Dijkstra vs A* on k-Nearest Neighbor Graphs
 
 Author: Adam Pinkos  
-Course: CS 4040 — Algorithms  
-Date: December 2025
+CS 4040 — Algorithms  
+Date: December 4th, 2025
 
 ## About the program
 This program compares the performance of Dijkstra’s algorithm and A* for computing shortest paths on random geometric graphs.  
