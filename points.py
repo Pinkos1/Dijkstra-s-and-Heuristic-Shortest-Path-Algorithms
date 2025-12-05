@@ -24,6 +24,7 @@ def generate_random_points(n, seed = None):
 
     points = []
 
+
     i = 0
     while i < n:
 
@@ -39,7 +40,7 @@ def generate_random_points(n, seed = None):
 
 
 def main():
-    
+
     # just use the defaults
     n = DEFAULT_N
     seed = DEFAULT_SEED
