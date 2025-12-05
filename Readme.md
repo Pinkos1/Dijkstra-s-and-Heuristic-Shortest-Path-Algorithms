@@ -38,11 +38,22 @@ This will:
 
 ## Experimental Values
 You can adjust values based on the performance of your device. For now, the values are scaled for regular python performance.  
-k values:  
+**k values:**  
 ```bash
 5, 10, 20, 50
 ```
-n values:  
+**n values:**  
 ```bash
 100, 500, 1000, 2000, 5000
 ```
+## Algorithm Descriptions
+**Dijkstra:**    
+-Uses a min-heap priority queue (heapq)
+-Stops early when the target t is extracted
+-Time complexity: 𝑂(𝑚log𝑛)
+
+**A**  
+-Same priority queue structure as Dijkstra
+-Uses heuristic ℎ(𝑢) = Euclidean distance to target 𝑡
+-Prioritizes nodes closer to 𝑡 reducing exploration
+-Expected to run faster, especially for larger k
