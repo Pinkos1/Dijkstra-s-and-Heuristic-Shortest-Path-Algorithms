@@ -11,3 +11,12 @@ import heapq
 
 
 def dijkstra(adj, s, t):
+
+    n = len(adj)
+
+    # distances d[v]
+    d = []
+    for _ in range(n):
+        d.append(float('inf'))
+
+    d[s] = 0.0
