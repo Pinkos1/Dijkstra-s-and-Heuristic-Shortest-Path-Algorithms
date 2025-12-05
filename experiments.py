@@ -76,3 +76,34 @@ def run_experiments():
     
 def make_plots(results):
 
+    for k in results:
+        (ns_list, d_times, a_times) = results[k]
+
+        # create a new figure
+        plt.figure()
+
+        # plot Dijkstra times
+        plt.plot(ns_list, d_times, label = "Dijkstra", marker = 'o')
+
+        # plot A* times
+        plt.plot(ns_list, a_times, label = "A*", marker = 'o')
+
+        # labels and title
+        plt.xlabel("n (number of points)")
+        plt.ylabel("Runtime (seconds)")
+        plt.title("Runtime Comparison for k = " + str(k))
+
+        # show legend
+        plt.legend()
+
+        # save the plot to a PNG file
+        filename = "plot_k_" + str(k) + ".png"
+        plt.savefig(filename)
+        print("Saved plot:", filename)
+
+        # show plot on screen
+        plt.show()
+
+        # close figure after showing it
+        plt.close()
+
