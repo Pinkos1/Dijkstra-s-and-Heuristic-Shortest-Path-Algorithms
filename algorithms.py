@@ -66,3 +66,11 @@ def dijkstra(adj, s, t):
 
 
 def astar(adj, points, s, t):
+
+    n = len(adj)
+
+    # distances
+    d = []
+    for _ in range(n):
+        d.append(float('inf'))
+    d[s] = 0.0
