@@ -107,3 +107,18 @@ def make_plots(results):
         # close figure after showing it
         plt.close()
 
+
+def main():
+    # run all experiments
+    results = run_experiments()
+
+    print("\nMaking plots...\n")
+
+    # generate and save the four plots
+    make_plots(results)
+
+    print("All plots generated.")
+
+
+if __name__ == "__main__":
+    main()
