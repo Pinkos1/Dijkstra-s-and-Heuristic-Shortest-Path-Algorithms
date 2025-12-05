@@ -39,11 +39,13 @@ def find_source_and_target(points):
     s_index = 0
     t_index = 0
 
+
     # go through all points
     for i in range(1, n):
         (x, y) = points[i]
         (sx, sy) = points[s_index]
         (tx, ty) = points[t_index]
+
 
         # check if current point is lexicographically smaller than s
         if (x < sx) or (x == sx and y < sy):
@@ -52,5 +54,6 @@ def find_source_and_target(points):
         # check if current point is lexicographically larger than t
         if (x > tx) or (x == tx and y > ty):
             t_index = i
+
 
     return s_index, t_index
