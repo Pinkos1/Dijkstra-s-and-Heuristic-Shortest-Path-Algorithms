@@ -73,7 +73,6 @@ def run_experiments():
 
     return results
 
-    
 def make_plots(results):
 
     # Loop over each k in the results dictionary
@@ -94,7 +93,7 @@ def make_plots(results):
             marker = 'o',
             markersize = 6,
             linewidth = 2,
-            color = "#1f77b4"  
+            color = "#1f77b4"
         )
 
         # Plot A* times
@@ -105,31 +104,27 @@ def make_plots(results):
             marker = 's',
             markersize = 6,
             linewidth = 2,
-            color = "#ff7f0e"   
+            color = "#ff7f0e"
         )
 
-        # Labels, title, and grid
+        # Labels and title
         plt.xlabel("n (number of points)", fontsize = 12)
         plt.ylabel("Runtime (seconds)", fontsize = 12)
         plt.title("Runtime Comparison for k = " + str(k), fontsize = 14)
 
-        # Slightly lighten the background
+        # Dark grey background
         ax = plt.gca()
-        ax.set_facecolor("2a2a2a")  
+        ax.set_facecolor("#2a2a2a")
 
-        # Show legend with light border
+        # Legend
         plt.legend(frameon = True, facecolor = "white", edgecolor = "black")
 
-        # Save the plot
-        filename = "plot_k_" + str(k) + ".png"
-        plt.savefig(filename, dpi = 150, bbox_inches = "tight")
-        print("Saved plot:", filename)
-
-        # Show the plot on screen
+        # Show the plot 
         plt.show()
 
         # Close the figure
         plt.close()
+
 
 
 def main():
