@@ -34,6 +34,31 @@ def dijkstra(adj, s, t):
 
 
 
+
     # while q != empty
     while len(Q) > 0:
-        
+        (dist_u, u) = heapq.heappop(Q)
+
+        # if already visited, skip
+        if visited[u]:
+            continue
+
+        visited[u] = True
+
+        # Stop early if t is extracted
+        if u == t:
+            return d[t]
+
+        # for each v in Adj[u]
+        neighbors = adj[u]
+        for (v, w_uv) in neighbors:
+
+            # RELAXATION
+            if d[v] > d[u] + w_uv:
+                d[v] = d[u] + w_uv
+
+                # decrease-key: push updated pair
+                heapq.heappush(Q, (d[v], v))
+
+    # unreachable
+    return float('inf') 
