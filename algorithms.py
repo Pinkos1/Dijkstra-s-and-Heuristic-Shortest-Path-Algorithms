@@ -81,3 +81,15 @@ def astar(adj, points, s, t):
     visited = []
     for _ in range(n):
         visited.append(False)
+
+    
+    (tx, ty) = points[t]
+
+    # priority queue stores (fu, u)
+    Q = []
+
+    #initial 
+    (sx, sy) = points[s]
+    h_s = math.sqrt((sx - tx) * (sx - tx) + (sy - ty) * (sy - ty))
+
+    heapq.heappush(Q, (h_s, s))
