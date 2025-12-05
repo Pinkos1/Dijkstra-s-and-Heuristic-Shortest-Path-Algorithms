@@ -5,4 +5,8 @@
 @Brief - Build k-nearest-neighbor graph.
 """
 
+import math
+
+
+def build_k_nearest_graph(points, k):
 
