@@ -27,3 +27,18 @@ def run_experiments():
         ns_list = []
         dijkstra_times = []
         astar_times = []
+
+
+
+        # different n graphs
+        for n in test_ns:
+            print("\n--- n =", n, " ---")
+
+            # generate random points
+            points = generate_random_points(n, seed=0)
+
+            # build k-NN graph
+            adj = build_k_nearest_graph(points, k)
+
+            # find s and t
+            s, t = find_source_and_target(points)
