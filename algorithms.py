@@ -25,9 +25,9 @@ def dijkstra(adj, s, t):
     visited = []
     for _ in range(n):
         visited.append(False)
-        
 
-    # priority queue Q keyed on d[u]
-    # store elements as (distance, node)
+
+    # priority queue Q keyed on du
+    # store elements as distance, node
     Q = []
     heapq.heappush(Q, (0.0, s))
