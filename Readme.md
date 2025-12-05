@@ -29,14 +29,20 @@ python experiments.py
 ```
 This will:
 
--Generate random point sets
-
--Build k-NN graphs
-
--Run Dijkstra and A*
-
--Print timing results
-
--Display plots on-screen
-
+-Generate random point sets  
+-Build k-NN graphs  
+-Run Dijkstra and A*  
+-Print timing results  
+-Display plots on-screen  
 -Save plots as PNG files in the project folder
+
+## Experimental Values
+You can adjust values based on the performance of your device. For now, the values are scaled for regular python performance.  
+k values:  
+```bash
+5, 10, 20, 50
+```
+n values:  
+```bash
+100, 500, 1000, 2000, 5000
+```
