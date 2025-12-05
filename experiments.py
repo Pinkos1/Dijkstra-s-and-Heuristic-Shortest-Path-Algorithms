@@ -12,7 +12,7 @@ from algorithms import dijkstra, astar
 
 def run_experiments():
 
-    test_ns = [100, 500, 1000, 2000, 5000] ## Will change over time @@
+    test_ns = [100, 500, 1000, 2000, 5000] ## Will change over time ##
 
     # k values
     test_ks = [5, 10, 20, 50]
