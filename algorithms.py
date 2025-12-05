@@ -20,3 +20,8 @@ def dijkstra(adj, s, t):
         d.append(float('inf'))
 
     d[s] = 0.0
+
+    # visited set
+    visited = []
+    for _ in range(n):
+        visited.append(False)
