@@ -93,3 +93,42 @@ def astar(adj, points, s, t):
     h_s = math.sqrt((sx - tx) * (sx - tx) + (sy - ty) * (sy - ty))
 
     heapq.heappush(Q, (h_s, s))
+
+
+
+
+     # while Q != empty
+    while len(Q) > 0:
+
+        (f_u, u) = heapq.heappop(Q)
+
+        if visited[u]:
+            continue
+
+        visited[u] = True
+
+        # if t is extracted, stop and return dt
+        if u == t:
+            return d[t]
+
+        # relax all neighbors
+        neighbors = adj[u]
+        (ux, uy) = points[u]
+
+        for (v, w_uv) in neighbors:
+
+            # normal relaxation
+            if d[v] > d[u] + w_uv:
+                d[v] = d[u] + w_uv
+
+                # compute heuristic hv
+                (vx, vy) = points[v]
+                h_v = math.sqrt((vx - tx) * (vx - tx) + (vy - ty) * (vy - ty))
+
+                f_v = d[v] + h_v   # f = g + h
+
+                # decrease key simulated by pushing new value
+                heapq.heappush(Q, (f_v, v))
+
+    # unreachable
+    return float('inf')
