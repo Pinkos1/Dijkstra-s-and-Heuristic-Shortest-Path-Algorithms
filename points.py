@@ -6,13 +6,18 @@
 """
 
 import random
+import math
+import heapq
+import time
+import matplotlib.pyplot as plt
+
 
 # random values 
 DEFAULT_N = 100
 DEFAULT_SEED = 0
 
 
-def generate_random_points(n, seed=None):
+def generate_random_points(n, seed = None):
     
     if seed is not None:
         random.seed(seed)
@@ -21,6 +26,7 @@ def generate_random_points(n, seed=None):
 
     i = 0
     while i < n:
+
         # sample directly, no rounding
         x = random.uniform(0.0, 100.0)
         y = random.uniform(0.0, 100.0)
@@ -30,7 +36,10 @@ def generate_random_points(n, seed=None):
     return points
 
 
+
+
 def main():
+    
     # just use the defaults
     n = DEFAULT_N
     seed = DEFAULT_SEED
