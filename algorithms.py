@@ -31,3 +31,9 @@ def dijkstra(adj, s, t):
     # store elements as distance, node
     Q = []
     heapq.heappush(Q, (0.0, s))
+
+
+
+    # while q != empty
+    while len(Q) > 0:
+        
