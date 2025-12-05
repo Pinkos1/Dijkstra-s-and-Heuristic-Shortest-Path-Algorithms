@@ -15,3 +15,7 @@ This program compares the performance of Dijkstra’s algorithm and A* for compu
 - Measure the runtime of both algorithms for increasing values of `n`
 - Generate four runtime plots (one for each k value)
 - Analyze and compare the results
+
+## How to run
+Requires Python 3 and matplotlib:
+pip install matplotlib
