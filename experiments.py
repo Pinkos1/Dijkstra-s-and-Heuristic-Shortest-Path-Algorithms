@@ -76,39 +76,64 @@ def run_experiments():
     
 def make_plots(results):
 
+    # Loop over each k in the results dictionary
     for k in results:
         (ns_list, d_times, a_times) = results[k]
 
-        # create a new figure
-        plt.figure()
+        # Modern style: light grid background
+        plt.style.use("ggplot")
 
-        # plot Dijkstra times
-        plt.plot(ns_list, d_times, label = "Dijkstra", marker = 'o')
+        # Create a new figure with a good size
+        plt.figure(figsize = (8, 5))
 
-        # plot A* times
-        plt.plot(ns_list, a_times, label = "A*", marker = 'o')
+        # Plot Dijkstra times
+        plt.plot(
+            ns_list,
+            d_times,
+            label = "Dijkstra",
+            marker = 'o',
+            markersize = 6,
+            linewidth = 2,
+            color = "#1f77b4"  
+        )
 
-        # labels and title
-        plt.xlabel("n (number of points)")
-        plt.ylabel("Runtime (seconds)")
-        plt.title("Runtime Comparison for k = " + str(k))
+        # Plot A* times
+        plt.plot(
+            ns_list,
+            a_times,
+            label = "A*",
+            marker = 's',
+            markersize = 6,
+            linewidth = 2,
+            color = "#ff7f0e"   
+        )
 
-        # show legend
-        plt.legend()
+        # Labels, title, and grid
+        plt.xlabel("n (number of points)", fontsize = 12)
+        plt.ylabel("Runtime (seconds)", fontsize = 12)
+        plt.title("Runtime Comparison for k = " + str(k), fontsize = 14)
 
-        # save the plot to a PNG file
+        # Slightly lighten the background
+        ax = plt.gca()
+        ax.set_facecolor("2a2a2a")  
+
+        # Show legend with light border
+        plt.legend(frameon = True, facecolor = "white", edgecolor = "black")
+
+        # Save the plot
         filename = "plot_k_" + str(k) + ".png"
-        plt.savefig(filename)
+        plt.savefig(filename, dpi = 150, bbox_inches = "tight")
         print("Saved plot:", filename)
 
-        # show plot on screen
+        # Show the plot on screen
         plt.show()
 
-        # close figure after showing it
+        # Close the figure
         plt.close()
 
 
 def main():
+
     # run all experiments
     results = run_experiments()
 
