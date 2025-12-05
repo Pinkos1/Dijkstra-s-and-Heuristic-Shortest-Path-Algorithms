@@ -19,3 +19,11 @@ def run_experiments():
 
     # store results for plotting later
     results = {}
+
+
+    for k in test_ks:
+        print("Running experiments for k =", k)
+
+        ns_list = []
+        dijkstra_times = []
+        astar_times = []
