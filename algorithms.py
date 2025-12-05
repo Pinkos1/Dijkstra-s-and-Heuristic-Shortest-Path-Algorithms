@@ -74,3 +74,10 @@ def astar(adj, points, s, t):
     for _ in range(n):
         d.append(float('inf'))
     d[s] = 0.0
+
+
+
+    #visits
+    visited = []
+    for _ in range(n):
+        visited.append(False)
