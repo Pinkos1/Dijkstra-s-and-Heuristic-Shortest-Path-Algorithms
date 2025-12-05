@@ -6,3 +6,8 @@
 """
 
 
+import math
+import heapq
+
+
+def dijkstra(adj, s, t):
