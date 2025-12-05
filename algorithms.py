@@ -62,3 +62,7 @@ def dijkstra(adj, s, t):
 
     # unreachable
     return float('inf') 
+
+
+
+def astar(adj, points, s, t):
