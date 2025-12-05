@@ -27,3 +27,16 @@ From the project folder:
 ```bash
 python experiments.py
 ```
+This will:
+
+-Generate random point sets
+
+-Build k-NN graphs
+
+-Run Dijkstra and A*
+
+-Print timing results
+
+-Display plots on-screen
+
+-Save plots as PNG files in the project folder
