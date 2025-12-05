@@ -17,6 +17,13 @@ This program compares the performance of Dijkstra’s algorithm and A* for compu
 - Analyze and compare the results
 
 ## How to run
+1.) Install libaries
 Requires Python 3 and matplotlib:  
 ```bash
-pip install matplotlib
+pip install matplotlib 
+``` 
+2.) Run the Experiment Script  
+From the project folder:  
+```bash
+python experiments.py
+```
