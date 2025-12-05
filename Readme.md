@@ -17,5 +17,6 @@ This program compares the performance of Dijkstra’s algorithm and A* for compu
 - Analyze and compare the results
 
 ## How to run
-Requires Python 3 and matplotlib:
+Requires Python 3 and matplotlib:  
+```bash
 pip install matplotlib
