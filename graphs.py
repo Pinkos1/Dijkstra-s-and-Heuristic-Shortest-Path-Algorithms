@@ -28,3 +28,25 @@ def build_k_nearest_graph(points, k):
         for v in range(n):
             if u == v:
                 continue
+
+
+            (x2, y2) = points[v]
+            dx = x1 - x2
+            dy = y1 - y2
+            dist = math.sqrt(dx * dx + dy * dy)
+
+            dlist.append((dist, v))
+
+        # sort by smallest distance first
+        dlist.sort(key=lambda item: item[0])
+
+        # take the first k neighbors
+        neighbors = dlist[:k]
+
+        # add edges
+        # undirected 
+        for (dist, v) in neighbors:
+            adj[u].append((v, dist))
+            adj[v].append((u, dist))  # undirected graph
+
+    return adj
