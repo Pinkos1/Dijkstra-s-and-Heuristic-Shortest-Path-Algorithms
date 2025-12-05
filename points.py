@@ -1,9 +1,12 @@
-"""
-@Author - Adam Pinkos
-@File - points.py
-@Date - 12/01/2025
-@Brief - Generate random points and picks target
-"""
+##
+# @file points.py
+# @author Adam Pinkos
+# @date 12/01/2025
+# @brief Functions for generating random points and selecting source/target.
+#
+# This module contains helper routines that generate points in [0,100]^2 and
+# determine the lexicographically smallest and largest points (s and t).
+#
 
 
 import random
@@ -13,6 +16,12 @@ DEFAULT_N = 100
 DEFAULT_SEED = 0
 
 
+
+##
+# @brief Generate n random 2D points in the square [0,100]^2.
+# @param n Number of points to generate.
+# @param seed Optional seed for reproducibility.
+# @return A list of (x, y) coordinates
 def generate_random_points(n, seed = None):
 
     if seed is not None:
@@ -31,6 +40,11 @@ def generate_random_points(n, seed = None):
     return points
 
 
+
+##
+# @brief Find source and target points using lexicographic order.
+# @param points List of x, y tuples.
+# @return s_index, t_index for the smallest and largest points.
 def find_source_and_target(points):
 
     n = len(points)
