@@ -1,13 +1,21 @@
-"""
-@Author - Adam Pinkos
-@File - graph.py
-@Date - 12/01/2025
-@Brief - Build k-nearest-neighbor graph
-"""
+##
+# @file graph.py
+# @author Adam Pinkos
+# @date 12/01/2025
+# @brief Builds a k-nearest-neighbor graph from a set of 2D points.
+#
+#
+
 
 import math
 
 
+
+##
+# @brief Build a k-nearest-neighbor graph from 2D points.
+# @param points List of (x, y) coordinates.
+# @param k Number of nearest neighbors to connect.
+# @return Adjacency list where adj[u] contains (v, distance) pairs.
 def build_k_nearest_graph(points, k):
 
     n = len(points)
@@ -50,3 +58,4 @@ def build_k_nearest_graph(points, k):
             adj[v].append((u, dist))  # undirected graph
 
     return adj
+
